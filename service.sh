@@ -15,7 +15,7 @@ until [ $(getprop sys.boot_completed) -eq 1 ] && [ -d "/sdcard" ]; do
   fi
 done
 
-work_dir=/sdcard/ADhosts
+work_dir=/sdcard/Android/ADhosts
 curdate="`date +%Y-%m-%d,%H:%M:%S`"
 
 if [ ! -d $work_dir ];then

@@ -85,7 +85,7 @@ REPLACE="
 ui_print "- 解压模块文件"
 unzip -o "$ZIPFILE" -x 'META-INF/*' -d $MODPATH >&2
 
-work_dir=/sdcard/ADhosts
+work_dir=/sdcard/Android/ADhosts
 syshosts=/system/etc/hosts
 if [ ! -d $work_dir ];then
    mkdir -p $work_dir

@@ -11,10 +11,10 @@
 ### 安装模式区别
 - systemless模式:使用Magisk目录不修改系统文件，卸载还原原文件，重启生效重启前的文件。
 
-- system模式:使用系统目录直接修改原文件，模块刷入时备份系统hosts至/sdcard/ADhosts，卸载还原备份，文件实时应用。
+- system模式:使用系统目录直接修改原文件，模块刷入时备份系统hosts至/sdcard/Android/ADhosts，卸载还原备份，文件实时应用。
 
 ### 注意
-本模块会在/sdcard生成ADhosts文件夹，内有更新日志与，动更新脚本，系统hosts备份。
+本模块会在/sdcard/Android生成ADhosts文件夹，内有更新日志与，动更新脚本，系统hosts备份。
 使用时请关闭其它的hosts模块，请关闭systemless hosts模块(如果有)。
 
 ### 链接

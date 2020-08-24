@@ -46,8 +46,11 @@ fi
 install_mod=$(grep install_mod $MODDIR/select.txt | awk -F '=' '{print $2}')
 if [ $install_mod = "true" ]; then
    ADhosts_dir=$MODDIR/system/etc
-else
+elif [ $install_mod = "false" ]; then
    ADhosts_dir=/system/etc
+else
+   echo "Error: 模式错误" >> $work_dir/update.log
+   exit 0
 fi
 
 if $(curl -V > /dev/null 2>&1) ; then
@@ -94,12 +97,12 @@ if [ $Now = $New ]; then
    rm -rf $work_dir/hosts
    echo "没有更新: $curdate" >> $work_dir/update.log
 else
-   mount -o rw,remount /system
+   mount -o remount,rw /
    mv -f $work_dir/hosts $ADhosts_dir/hosts
    chmod 644 $ADhosts_dir/hosts
    chown 0:0 $ADhosts_dir/hosts
    chcon u:object_r:system_file:s0 $ADhosts_dir/hosts
-   mount -o ro,remount /system
+   mount -o remount,ro /
    echo -n "上次更新时间: $curdate" >> $work_dir/update.log
    echo "  hosts文件目录:$ADhosts_dir/hosts" >> $work_dir/update.log
    sed -i '1d' $work_dir/update.log

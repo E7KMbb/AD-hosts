@@ -87,6 +87,7 @@ unzip -o "$ZIPFILE" -x 'META-INF/*' -d $MODPATH >&2
 
 work_dir=/sdcard/Android/ADhosts
 syshosts=/system/etc/hosts
+
 if [ ! -d $work_dir ];then
    mkdir -p $work_dir
 fi
@@ -200,7 +201,9 @@ else
   if [ ! -e $work_dir/syshosts.bak ]; then
      cp $syshosts $work_dir/syshosts.bak
   fi
+  mount -o remount,rw /
   mv -f $MODPATH/system/etc/hosts $syshosts
+  mount -o remount,ro /
   rm -rf $MODPATH/system
 fi
 

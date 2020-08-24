@@ -1,6 +1,6 @@
 id=AD-Hosts
 name=AD Hosts
-version=V5.2.2
-versionCode=5220
+version=V5.2.3
+versionCode=5230
 author=依然的爱
 description=屏蔽各类广告包括(各大视频网站,运营商劫持广告,大部分APP广告),hosts规则均来自于网络搜索,github,人工抓取及酷友提供,使用时请关闭其他hosts模块,请关闭systemless hosts模块(如果有)。
